@@ -95,20 +95,24 @@ body .ng-star-inserted{
 #chatbox .messagelabel{
     margin:0 0 0 3px;
 }
+.add{
+    color:#fff;
+}
 #chatbox .mat-input-element{
     margin: 0 0 0 3px;
 }
 .loginwrapper form {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 420px;
   height: 240px;
   position: absolute;
   left: calc(50% - 210px);
   top: calc(50% - 120px);
-  backdrop-filter:brightness(0.3);
+  backdrop-filter: brightness(0.3);
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 .loginwrapper input{
     padding:5px;

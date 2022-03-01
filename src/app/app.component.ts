@@ -19,31 +19,13 @@ export class AppComponent {
   
   title = 'chatapp'
 
-  friendList:Array<User>=
-  [
-  {
-    id:0,
-    name:'Salvatore',
-    surname:'Ferro',
-    email:'sferro@gmail.com',
-    phone:3333334443
-  },
-  {
-    id:1,
-    name:'Vincenzo',
-    surname:'Donnarumma',
-    email:'vincenzodnm@outlook.it',
-    phone:4444443334
-  }
-];
-
   logged:any = {
     trusted:false,
     id:-1
   };
 
   matchEmail(email:string){
-    let temp = this.friendList.filter((el)=>{return el.email==email});
+    let temp = JSON.parse(localStorage.getItem('users')!).filter((el:any)=>{return el.email==email});
     if(temp.length!==0)
     {
     this.logged.id=temp[0].id;

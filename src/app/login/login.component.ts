@@ -1,7 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl,FormGroup,Validators } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
-import { window } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +19,22 @@ export class LoginComponent implements OnInit {
      email:new FormControl('',Validators['required']),
      password:new FormControl('',Validators['required'])
    })
+    let temp = [{
+      id: 0,
+      name: 'vincenzo',
+      surname: 'donnarumma',
+      email: 'vincenzodnm@outlook.it',
+      phone: 3458800962,
+    },
+    {
+      id: 1,
+      name: 'salvatore',
+      surname: 'ferro',
+      email: 'sferro@gmail.com',
+      phone: 3458800962,
+    }
+    ];
+    localStorage.setItem('users', JSON.stringify(temp));
 
   }
   

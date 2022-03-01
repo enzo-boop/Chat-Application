@@ -16,6 +16,7 @@ import { BarComponent } from './bar/bar.component';
 import { RoomComponent } from './room/room.component';
 import { LoginComponent } from './login/login.component';
 import { ModalComponent } from './modal/modal.component';
+import { AddusermodalComponent } from './addusermodal/addusermodal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ModalComponent } from './modal/modal.component';
     BarComponent,
     RoomComponent,
     LoginComponent,
-    ModalComponent
+    ModalComponent,
+    AddusermodalComponent
   ],
   imports: [
     BrowserModule,

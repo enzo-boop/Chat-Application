@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import User from '../app.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AddusermodalComponent } from '../addusermodal/addusermodal.component';
 
 @Component({
   selector: 'app-bar',
@@ -10,7 +12,7 @@ export class BarComponent implements OnInit {
 
   @Input() currentId: number = -1;
 
-  @Input() currentFriends: Array<User> = [];
+  currentFriends: Array<User> = JSON.parse(localStorage!.getItem('users')!).map((el: any) => { return el });
 
   badgeCount(friendId: any): number {
     let value = 0;
@@ -26,8 +28,11 @@ export class BarComponent implements OnInit {
     return value
   };
 
-  constructor() {
- 
+  openDialog() {
+    let dialogRef = this.dialog.open(AddusermodalComponent);
+  }
+
+  constructor(private dialog: MatDialog) {
   }
 
   ngOnInit(): void {

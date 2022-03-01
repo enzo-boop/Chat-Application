@@ -1,0 +1,15 @@
+<div *ngIf="logged.trusted===false;else trusteduser">
+  <app-login (onLogin)="matchEmail($event)"></app-login>
+</div> 
+  <ng-template  #trusteduser>
+<div class="body"> 
+  <app-bar [currentId]="logged.id" [currentFriends]="friendList">
+  </app-bar>
+  <router-outlet>
+  </router-outlet>
+  <div class="utility">
+  <button mat-button (click)="logOut()"><mat-icon>exit_to_app</mat-icon></button>
+    <button mat-button (click)="openDialog()"><mat-icon>delete</mat-icon></button>
+  </div>
+</div>
+</ng-template>

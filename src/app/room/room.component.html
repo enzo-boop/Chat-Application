@@ -1,0 +1,23 @@
+<div class="chatwrapper">
+<div id="chatbox">
+  <div class="messagewrapper">
+    <div class='message' *ngFor="let message of messageHistory">
+      <div class='usrmessage' *ngIf="helperId===message.sender;else friendmessage">
+        <p class="messagebody">{{message.body}}</p>
+        <div class="time">{{message.time}}</div>
+      </div>
+      <ng-template #friendmessage>
+        <div class="friendmessage">
+          <p class="messagebody">{{message.body}}</p>
+          <div class="time">{{message.time}}</div>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+        <mat-form-field [formGroup]="message" class="messageform" hideRequiredMarker>
+            <mat-label class="messagelabel">Messaggio</mat-label>
+            <input matInput type="text" formControlName='body'autocomplete="off"/>
+            <button mat-button (click)="Check($event)"><mat-icon>send</mat-icon></button>
+        </mat-form-field>
+</div>
+</div>

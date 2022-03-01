@@ -1,0 +1,154 @@
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+ }
+ .body{
+     display:flex!important;
+    flex-direction: row!important;
+}
+.friendscontainer::-webkit-scrollbar{
+    display: none;
+}
+.friendscontainer{
+    height: 100vh;
+    width:330px;
+    overflow-y: scroll;
+    background: #424242;
+    
+}
+.mat-card{
+    margin:5px 0 5px 0;
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: space-between;
+    align-items: center;
+    width:90%!important;
+}
+.chatlink{
+    text-decoration: none;
+    color: antiquewhite;
+}
+body .ng-star-inserted{
+    display:flex;
+    flex-direction:column;
+    width:calc(100% - 64px);
+}
+#chatbox{
+    height: 100vh;
+    display: flex!important;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.mat-form-field-infix {
+  background: #424242;
+  margin:5px!important;
+  border:0!important;
+  display: flex !important;
+  border-radius:5px;
+  color:#fff;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.utility {
+    display:flex;
+    flex-direction:column;
+  position: absolute;
+  right: 0;
+  background: #424242;
+  height: 100%;
+  box-shadow: 1px 0 3px 1px rgb(0 0 0 / 80%);
+}
+.message{
+    max-width:100%;
+    display:flex;
+}
+.messagebody{
+    word-wrap:break-word;
+}
+.friendmessage, .usrmessage {
+    display:flex;
+    color:#fff;
+    margin:5px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+.friendmessage {
+    max-width:180px;
+    place-self:start;
+  background: #424242;
+}
+.usrmessage {
+  max-width: 180px;
+  place-self: end;
+  background: #8f8f8f;
+}
+.messagebody{
+    margin:5px!important;
+}
+.time{
+    place-self:end;
+    margin:5px;
+}
+.utility mat-icon {
+  color:#fff;
+}
+#chatbox .messagelabel{
+    margin:0 0 0 3px;
+}
+#chatbox .mat-input-element{
+    margin: 0 0 0 3px;
+}
+.loginwrapper form {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width: 420px;
+  height: 240px;
+  position: absolute;
+  left: calc(50% - 210px);
+  top: calc(50% - 120px);
+  backdrop-filter:brightness(0.3);
+}
+.loginwrapper input{
+    padding:5px;
+}
+.mat-typography {
+  background: url('https://influence.digital/wp-content/uploads/2020/12/social-media-sketch-seamless-doodle-pattern-social-media-sketch-vector-seamless-doodle-pattern-gray-icons-white-background-174378665-1.jpg')
+}
+.mat-dialog-container{
+    width:300px!important;
+    display:flex!important;
+    justify-content:center;
+    align-items:center;
+}
+.mat-dialog-container p, .mat-dialog-container h1{
+    text-align:center;
+}
+.mat-dialog-container .mat-dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mat-dialog-container button{
+    width:80px!important;
+}
+#loginbtn, .loginwrapper h1 {
+  color: #fff;
+}
+#loginbtn:hover {
+  animation: animate 0.3s 1;
+}
+@keyframes animate{
+    0%{
+        transform:rotate(40deg);
+    }
+    25%{transform:rotate(-30deg)}
+    50%{transform:rotate(20deg)}
+    75%{
+        transform:rotate(-10deg)
+    }
+    100%{
+        transform:rotate(0)
+    }
+}

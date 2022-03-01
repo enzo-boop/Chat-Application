@@ -1,0 +1,11 @@
+<div class="friendscontainer">
+    <mat-card *ngFor="let friend of currentFriends">
+        <mat-card-header>{{friend.name}} {{friend.surname}}</mat-card-header>
+        <mat-card-content><a mat-button href="{{currentId}}/{{friend.id}}" class="chatlink">
+          <mat-icon>
+          <span  matBadge={{badgeCount(friend.id)}} Overlap="false" matBadgePosition="before"></span>
+          chat_bubble_outline</mat-icon>
+          </a>
+      </mat-card-content>
+    </mat-card>
+</div>

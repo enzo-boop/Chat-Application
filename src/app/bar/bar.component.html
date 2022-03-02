@@ -1,5 +1,5 @@
 <div class="friendscontainer">
-  <div class="commands"><button mat-button><mat-icon class="add" (click)="openDialog()">add</mat-icon></button></div>
+  <div class="commands"><button mat-button (click)="openDialog()"><mat-icon class="add">add</mat-icon></button></div>
     <mat-card *ngFor="let friend of currentFriends">
         <mat-card-header>{{friend.name}} {{friend.surname}}</mat-card-header>
         <mat-card-content><a mat-button href="{{currentId}}/{{friend.id}}" class="chatlink">

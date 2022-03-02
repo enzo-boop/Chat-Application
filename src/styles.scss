@@ -134,8 +134,15 @@ body .ng-star-inserted{
   align-items: center;
   justify-content: space-between;
 }
-.mat-dialog-container button{
-    width:80px!important;
+.newuserform mat-form-field{
+    width:240px;
+    margin-left:5px;
+}
+.mat-dialog-container::-webkit-scrollbar{
+    display:none;
+}
+.mat-dialog-container button {
+  width: 80px !important;
 }
 #loginbtn, .loginwrapper h1 {
   color: #fff;

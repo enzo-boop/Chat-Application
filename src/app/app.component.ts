@@ -19,6 +19,8 @@ export class AppComponent {
   
   title = 'chatapp'
 
+  friends:Array<User>=[]
+
   logged:any = {
     trusted:false,
     id:-1
@@ -30,7 +32,6 @@ export class AppComponent {
     {
     this.logged.id=temp[0].id;
     this.logged.trusted=true;
-    console.log('logged');
     localStorage.setItem('logged',JSON.stringify(this.logged));
     }
     else
@@ -53,11 +54,16 @@ export class AppComponent {
     dialogRef.afterClosed().subscribe((result) => { result === true ? this.cleanCache() : null });
   }
 
+  setUserList() {
+    this.friends = JSON.parse(localStorage.getItem('users')!);
+    console.log('new user emitted');
+  }
+
   constructor(private dialog: MatDialog) {
     if(JSON.parse(localStorage.getItem('logged')!)!==null){
       this.logged = (JSON.parse(localStorage.getItem('logged')!));
     }
-    
+    this.friends = JSON.parse(localStorage.getItem('users')!)
   }
 
 }

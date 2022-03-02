@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Output } from '@angular/core';
 import User from '../app.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AddusermodalComponent } from '../addusermodal/addusermodal.component';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-bar',
@@ -10,9 +11,11 @@ import { AddusermodalComponent } from '../addusermodal/addusermodal.component';
 })
 export class BarComponent implements OnInit {
 
+  @Output() userAdded: EventEmitter<any> = new EventEmitter<any>();
+
   @Input() currentId: number = -1;
 
-  currentFriends: Array<User> = JSON.parse(localStorage!.getItem('users')!).map((el: any) => { return el });
+  @Input() currentFriends: Array<User> = [];
 
   badgeCount(friendId: any): number {
     let value = 0;
@@ -30,13 +33,33 @@ export class BarComponent implements OnInit {
 
   openDialog() {
     let dialogRef = this.dialog.open(AddusermodalComponent);
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res !== false) {
+        this.addUser(res);
+      }
+    })
+  }
+
+  addUser(user: any) {
+    if (user !== undefined) {
+    let newUser: User = {
+      id: JSON.parse(localStorage!.getItem('users')!).length,
+      name: user.name,
+      surname: user.surname,
+      phone:user.phone,
+      email:user.email,
+    }
+    let temp = JSON.parse(localStorage!.getItem('users')!).map((elem: User) => { return elem });
+    temp.push(newUser);
+    localStorage.setItem('users', JSON.stringify(temp));
+      this.userAdded.emit();
+    }
   }
 
   constructor(private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
-  
   }
 
 }

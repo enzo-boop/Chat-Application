@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output,Input } from '@angular/core';
 import { FormBuilder, FormControl,FormGroup,Validators } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 
@@ -13,12 +13,12 @@ export class LoginComponent implements OnInit {
 
   loginForm:FormGroup;
 
-  constructor(private fb:FormBuilder) { 
-   
+  constructor(private fb: FormBuilder) {
    this.loginForm = fb.group({
      email:new FormControl('',Validators['required']),
      password:new FormControl('',Validators['required'])
    })
+    if (localStorage.getItem('users') === null) {
     let temp = [{
       id: 0,
       name: 'vincenzo',
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     }
     ];
     localStorage.setItem('users', JSON.stringify(temp));
-
+    }
   }
   
   logCheck(){

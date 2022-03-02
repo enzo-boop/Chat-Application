@@ -1,22 +1,23 @@
-<form mat-form [formGroup]="form">
+<form mat-form [formGroup]="form" class="newuserform">
+  <h1>Aggiungi amico</h1>
   <mat-form-field>
     <mat-label>Nome</mat-label>
-    <input matInput formControlName="name" type="text" />
+    <input matInput formControlName="name" type="text" hideRequiredMarker />
   </mat-form-field>
   <mat-form-field>
     <mat-label>Cognome</mat-label>
-    <input matInput formControlName="surname" type="text" />
+    <input matInput formControlName="surname" type="text" hideRequiredMarker/>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Cellulare</mat-label>
-    <input matInput formControlName="phone" type="text" />
+    <input matInput formControlName="phone" type="text" hideRequiredMarker/>
   </mat-form-field>
   <mat-form-field>
     <mat-label>E-mail</mat-label>
-    <input matInput formControlName="email" type="email" />
+    <input matInput formControlName="email" type="email" hideRequiredMarker/>
   </mat-form-field>
   <div mat-dialog-actions>
     <button mat-button [mat-dialog-close]="false">Annulla</button>
-    <button mat-button [mat-dialog-close]="Check()">Ok</button>
+    <button mat-button [mat-dialog-close]="form.valid?form.value:false">Ok</button>
   </div>
 </form>

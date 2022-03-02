@@ -3,7 +3,7 @@
 </div> 
   <ng-template  #trusteduser>
 <div class="body"> 
-  <app-bar [currentId]="logged.id">
+  <app-bar [currentId]="logged.id" [currentFriends]="friends" (userAdded)="setUserList()">
   </app-bar>
   <router-outlet>
   </router-outlet>

@@ -35,7 +35,7 @@ export class RoomComponent implements OnInit {
     let messageData: any = {
      sender: this.activatedRoute.snapshot.paramMap.get('id'),
      body:this.message.controls['body'].value,
-     time:tempDate.toLocaleTimeString(),
+     time:tempDate.toLocaleTimeString().slice(0,5),
    }
    this.message.controls['body'].reset();
    this.messageHistory.push(messageData);
